@@ -71,7 +71,7 @@ class Main extends Component {
           <Route path='/patient' component={() => <PatientComp contract={this.state.contract} accounts={this.state.accounts}/>}/>
           <Route path='/treat' component={() => <AllTreatmentComponent contract={this.state.contract} accounts={this.state.accounts}/>}/>
           <Route path='/patdata' component={() => <GetPatient contract={this.state.contract} accounts={this.state.accounts}/>}/>
-          <Redirect to="/home"/>
+          <Redirect to="/"/>
         </Switch>
         <Footer/>
       </div>

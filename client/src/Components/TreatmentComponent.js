@@ -60,7 +60,7 @@ class TreatmentComp extends Component{
         if(this.state.patstate == 'Recovered'){
             patientstate = 1;
         }
-        else{
+        else if(this.state.patstate == 'Deceased'){
             patientstate = 2;
         }
         console.log("Current State" + JSON.stringify(this.state));
@@ -120,6 +120,7 @@ class TreatmentComp extends Component{
                                 <Label htmlFor="patstate" md={2}>Patient State</Label>
                                 <Col md={4}>
                                     <Input type="select" name="patstate" value={this.state.patstate} onChange={this.handleInputChange}>
+                                    <option>Choose</option>
                                     <option>Active</option>
                                     <option>Recovered</option>
                                     <option>Deceased</option>

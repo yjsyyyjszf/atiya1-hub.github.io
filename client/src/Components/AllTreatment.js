@@ -17,8 +17,8 @@ function Allpatrender({dish}){
         <CardText><small>Patient account : {dish.patient_add}</small></CardText>
         <CardText><small>Symptoms : {dish.symptoms}</small></CardText>
         <CardText><small>Medications : {dish.medications}</small></CardText>
-        <CardText><small>Description{dish.description}</small></CardText>
-        <CardText><small>Prescription{dish.prescription}</small></CardText>
+        <CardText><small>Description : {dish.description}</small></CardText>
+        <CardText><small>Prescription : {dish.prescription}</small></CardText>
           <CardText>
             <small >Time completed : {dish.dateofComp}</small>
           </CardText>

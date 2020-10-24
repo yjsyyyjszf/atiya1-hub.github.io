@@ -74,6 +74,7 @@ class PatientComp extends Component{
                                 <Label htmlFor="gender" md={2}>Gender</Label>
                                 <Col md={4}>
                                     <Input type="select" name="gender" value={this.state.gender} onChange={this.handleInputChange}>
+                                    <option>Choose</option>
                                     <option>Male</option>
                                     <option>Female</option>
                                     </Input>
@@ -83,6 +84,7 @@ class PatientComp extends Component{
                                 <Label htmlFor="bloodtype" md={2}>Blood Type</Label>
                                 <Col md={4}>
                                     <Input type="select" name="bloodtype" value={this.state.bloodtype} onChange={this.handleInputChange}>
+                                    <option>Choose</option>
                                     <option>A</option>
                                     <option>B</option>
                                     <option>AB</option>
