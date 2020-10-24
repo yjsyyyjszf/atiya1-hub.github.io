@@ -64,7 +64,7 @@ class Main extends Component {
         <Header auth={this.state.auth} />
 
         <Switch>
-          <Route path='/home' component={Homepage} />
+          <Route exact path='/' component={Homepage} />
           <Route path='/doctor' component={() => <DoctorComp contract={this.state.contract} accounts={this.state.accounts}/>} />
           <Route path='/treatment' component={() => <TreatmentComp contract={this.state.contract} accounts={this.state.accounts}/>}/>
           <Route path='/docs' component={() => <AllDocsComponent contract={this.state.contract} accounts={this.state.accounts}/>}/>
