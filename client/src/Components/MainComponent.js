@@ -65,12 +65,12 @@ class Main extends Component {
 
         <Switch>
           <Route exact path='/' component={Homepage} />
-          <Route path='/doctor' component={() => <DoctorComp contract={this.state.contract} accounts={this.state.accounts}/>} />
-          <Route path='/treatment' component={() => <TreatmentComp contract={this.state.contract} accounts={this.state.accounts}/>}/>
-          <Route path='/docs' component={() => <AllDocsComponent contract={this.state.contract} accounts={this.state.accounts}/>}/>
-          <Route path='/patient' component={() => <PatientComp contract={this.state.contract} accounts={this.state.accounts}/>}/>
-          <Route path='/treat' component={() => <AllTreatmentComponent contract={this.state.contract} accounts={this.state.accounts}/>}/>
-          <Route path='/patdata' component={() => <GetPatient contract={this.state.contract} accounts={this.state.accounts}/>}/>
+          <Route path='/doctor' component={() => <DoctorComp contract={this.state.contract} accounts={this.state.accounts } auth={this.state.auth}/>} />
+          <Route path='/treatment' component={() => <TreatmentComp contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
+          <Route path='/docs' component={() => <AllDocsComponent contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
+          <Route path='/patient' component={() => <PatientComp contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>} />
+          <Route path='/treat' component={() => <AllTreatmentComponent contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
+          <Route path='/patdata' component={() => <GetPatient contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Redirect to="/"/>
         </Switch>
         <Footer/>

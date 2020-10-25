@@ -24,16 +24,21 @@ class DoctorComp extends Component{
             [name] : value
         })
     }
-
+    
     async handleSubmit(event){
         console.log("Current State" + JSON.stringify(this.state));
         event.preventDefault();
-        const res = await this.props.contract.methods.calldoctor(this.state.age,this.state.name,this.state.speciality).send({from: this.props.accounts[0],gas : 1000000});
-       // console.log(res);
+        const req = await this.props.contract.methods.calldoctor(this.state.age,this.state.name,this.state.speciality).send({from: this.props.accounts[0],gas : 1000000});
+        
+        
+        // console.log(res);
         
     }
 
     render(){
+        if(!this.props.auth){
+            return(<React.Fragment></React.Fragment>);
+        }
         return(
             <div className="container">
                 
@@ -59,12 +64,14 @@ class DoctorComp extends Component{
                             </FormGroup>
                             <FormGroup row>
                                 <Col md={{size:10, offset:2}}>
-                                    <Button type="submit" color="primary">
+                                    <Button type="submit" color="primary" >
                                         Add Doctor
                                     </Button>
                                 </Col>
+                                
                             </FormGroup>
                         </Form>
+                     
                 </div>
        
         )

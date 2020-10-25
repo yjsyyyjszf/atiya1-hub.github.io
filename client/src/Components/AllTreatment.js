@@ -7,6 +7,8 @@ var mst;
 var alldocs = [];
 function Allpatrender({dish}){
     var xy = dish.dateofComp;
+    var date = new Date(xy*1000);
+    var time = JSON.stringify(date);
     var yz = xy != 0?"bg-success text-white":""; 
     return(
         <Card className={yz}>
@@ -20,7 +22,7 @@ function Allpatrender({dish}){
         <CardText><small>Description : {dish.description}</small></CardText>
         <CardText><small>Prescription : {dish.prescription}</small></CardText>
           <CardText>
-            <small >Time completed : {dish.dateofComp}</small>
+            <small >Time completed : {xy == 0?"Treatment not completed":time}</small>
           </CardText>
         </CardBody>
       </Card>
@@ -58,6 +60,9 @@ class AllTreatmentComponent extends Component{
                 </div>
             );
         })
+        if(!this.props.auth){
+            return(<React.Fragment></React.Fragment>);
+        }
         return(
         <div className="container">
             <h2>All Treatment</h2>

@@ -28,6 +28,7 @@ function Home(props){
         console.log(addr);
         
     }
+    
     return(
         <div className="container">
      
